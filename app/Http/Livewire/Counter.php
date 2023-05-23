@@ -6,6 +6,10 @@ use Livewire\Component;
 
 class Counter extends Component
 {
+    public function decrement()
+    {
+        dd('Hatchis')
+    }
     public function increment()
     {
         dd('Weed');
