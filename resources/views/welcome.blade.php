@@ -9,7 +9,6 @@
      @livewireStyles
 </head>
 <body>
-    <livewire:comments/>
     <livewrire:scripts/>
     @livewire('comments')
      @livewireScripts
