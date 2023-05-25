@@ -11,7 +11,7 @@
 <body>
     <livewire:comments/>
     <livewrire:scripts/>
-    @livewire('counter')
+    @livewire('comments')
      @livewireScripts
 </body>
 </html>
