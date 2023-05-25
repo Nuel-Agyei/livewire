@@ -3,16 +3,18 @@
             <h1 class="my-10 text-3xl">Comments</h1>
         <form class='ny-4 flex' wire:submit.prevent='addComment'>
             <div class='my-4 flex'>
-                <input type='text' class='w-full rounded border shadow p-2 mr-2 my-2' placeholder="What's on your mind?" wire:model='newComment'>
+                <input type='text' class='shadow mr-2 my-2' style="width: 90%; border-radius: 0.25rem; border-width:1px; padding:0.5rem;
+                margin-right:0.5rem; margin-top:8px; margin-bottom:8px;" placeholder="What's on your mind?" wire:model='newComment'>
                 <div class="py-2">
-                    <button class="p-2 bg-blue-500 w-20 rounded shadow text-white" wire:click="addComment">Add</button>
+                    <button class="shadow" style="padding:8px; width:80px; border-radius: 0.25rem;
+                  --tw-bg-opacity:1; background-color:blue; --tw-text-opacity:1; color:beige;" wire:click="addComment">Add</button>
                 </div>
             </div>
         </form>
         @foreach ($comments as $comment)
-        <div class='rounded border shadow p-3 my-2'>
-            <div class="flex justify-start my-2">
-                <p class="font-bold text-lg">{{$comment['creator']}}</p>
+        <div class='shadow' style="border-radius: 0.25rem; border-width:2px; padding:0.75px; margin-top:8px; margin-bottom:8px;">
+            <div style="display:flex; justify-content:flex-start margin-top:8px; margin-bottom:8px;">
+                <p class="text-lg" style="font-weight: 700; font-size:1.75rem; ">{{$comment['creator']}}</p>
                 <p class="mx-3 py-1 text-xs text-gray-500 font-semibold">{{$comment['created_at']}}</p>
             </div>
             <p class="text-gray-800">{{$comment['body']}}</p>

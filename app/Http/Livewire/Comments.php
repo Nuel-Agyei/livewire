@@ -7,6 +7,12 @@ use Livewire\Component;
 
 class Comments extends Component
 {
+    protected $guarded = [];
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
     public $comments =[
         ['body' => 'Lorem ipsum dolor sit amet consectetur, adispisicing
         elit. Quasi ex cupiditate quo commodi aspernatur delectus veniam necessitatibus',
@@ -17,6 +23,9 @@ class Comments extends Component
 
     public function addComment()
     {
+        if ($this->newComment =='') {
+            return;
+        }
         array_unshift($this->comments,
         ['body'=> $this->newComment,
         'created_at'=>Carbon::now()->diffForHumans(),
